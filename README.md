@@ -20,62 +20,62 @@ This project demonstrates the implementation of a Library Management System usin
 - Step 2: Load data into PostgreSQL server by creating a new database "library_db" and create tables with relevant columns along with their data types.
 Do add Primary keys to each table and the resultant queries to create the 6 tables will be as follows - 
 
-    CREATE TABLE books
-    (
-            isbn VARCHAR(50) PRIMARY KEY,
-            book_title VARCHAR(80),
-            category VARCHAR(30),
-            rental_price FLOAT,
-            status VARCHAR(10),
-            author VARCHAR(30),
-            publisher VARCHAR(30)
-    );
-
-    CREATE TABLE members
-    (
-            member_id VARCHAR(10) PRIMARY KEY,
-            member_name VARCHAR(25),
-            member_address VARCHAR(75),
-            reg_date DATE
-    );
-
-    CREATE TABLE issued_status
-    (
-            issued_id VARCHAR(10) PRIMARY KEY,
-            issued_member_id VARCHAR(30),
-            issued_book_name VARCHAR(80),
-            issued_date DATE,
-            issued_book_isbn VARCHAR(50),
-            issued_emp_id VARCHAR(10)
-           
-    );
-
-    CREATE TABLE return_status
-    (
-            return_id VARCHAR(10) PRIMARY KEY,
-            issued_id VARCHAR(10),
-            return_book_name VARCHAR(75),
-            return_date DATE,
-            return_book_isbn VARCHAR(50)
-         
-    );
-
-    CREATE TABLE branch
-    (
-            branch_id VARCHAR(10),
-            manager_id VARCHAR(10),
-            branch_address VARCHAR(30),
-            contact_no VARCHAR(15)
-    );
-
-
-    CREATE TABLE IF NOT EXISTS public.employees
-    (
-            emp_id VARCHAR(10),
-            emp_name VARCHAR(25),
-            position VARCHAR(15),
-            branch_id VARCHAR(25)
-    );
+	    CREATE TABLE books
+	    (
+	            isbn VARCHAR(50) PRIMARY KEY,
+	            book_title VARCHAR(80),
+	            category VARCHAR(30),
+	            rental_price FLOAT,
+	            status VARCHAR(10),
+	            author VARCHAR(30),
+	            publisher VARCHAR(30)
+	    );
+	
+	    CREATE TABLE members
+	    (
+	            member_id VARCHAR(10) PRIMARY KEY,
+	            member_name VARCHAR(25),
+	            member_address VARCHAR(75),
+	            reg_date DATE
+	    );
+	
+	    CREATE TABLE issued_status
+	    (
+	            issued_id VARCHAR(10) PRIMARY KEY,
+	            issued_member_id VARCHAR(30),
+	            issued_book_name VARCHAR(80),
+	            issued_date DATE,
+	            issued_book_isbn VARCHAR(50),
+	            issued_emp_id VARCHAR(10)
+	           
+	    );
+	
+	    CREATE TABLE return_status
+	    (
+	            return_id VARCHAR(10) PRIMARY KEY,
+	            issued_id VARCHAR(10),
+	            return_book_name VARCHAR(75),
+	            return_date DATE,
+	            return_book_isbn VARCHAR(50)
+	         
+	    );
+	
+	    CREATE TABLE branch
+	    (
+	            branch_id VARCHAR(10),
+	            manager_id VARCHAR(10),
+	            branch_address VARCHAR(30),
+	            contact_no VARCHAR(15)
+	    );
+	
+	
+	    CREATE TABLE IF NOT EXISTS public.employees
+	    (
+	            emp_id VARCHAR(10),
+	            emp_name VARCHAR(25),
+	            position VARCHAR(15),
+	            branch_id VARCHAR(25)
+	    );
 
 - Step 3: Now, in order to establish relationship between these above 6 tables, we need to develop an Entity Relationship Diagram(ERD). Right click on the library_db, and select ERD for database option. For building the relatioships, we need to alter certain tables to add Foreign Keys to develop the relationship with Primary Key of the other table. Following queries are used - 
 
